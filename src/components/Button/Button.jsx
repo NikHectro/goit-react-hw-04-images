@@ -10,5 +10,5 @@ export const Button = ({ onLoadMoreClick }) => {
 };
 
 Button.protoTypes = {
-  onButtonClonLoadMoreClickick: PropTypes.func.isRequired,
+  onLoadMoreClick: PropTypes.func.isRequired,
 };

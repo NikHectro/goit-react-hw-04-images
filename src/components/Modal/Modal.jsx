@@ -5,6 +5,7 @@ export class Modal extends Component {
   static propTypes = {
     bigImg: PropTypes.string.isRequired,
     onClose: PropTypes.func.isRequired,
+    alt: PropTypes.string,
   };
 
   componentDidMount() {

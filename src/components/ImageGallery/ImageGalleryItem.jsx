@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function ImageGalleryItem({
   smallImg,
   alt,
@@ -15,3 +17,10 @@ export default function ImageGalleryItem({
     </li>
   );
 }
+
+ImageGalleryItem.propTypes = {
+  alt: PropTypes.string,
+  smallImg: PropTypes.string.isRequired,
+  bigImg: PropTypes.string.isRequired,
+  onImgClick: PropTypes.func.isRequired,
+};
