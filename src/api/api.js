@@ -5,7 +5,7 @@
 //   return response.data.hits;
 // };
 
-export async function fetchImages(searchQuery, page) {
+export async function fetchAPI(searchQuery, page) {
   const response = await fetch(
     `https://pixabay.com/api/?q=${searchQuery}&page=${page}&key=29344544-28f8077a689a3611398a04467&image_type=photo&orientation=horizontal&per_page=12`
   );

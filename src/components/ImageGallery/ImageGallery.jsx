@@ -24,7 +24,7 @@ ImageGallery.propTypes = {
       id: PropTypes.number.isRequired,
       tags: PropTypes.string,
       webformatURL: PropTypes.string.isRequired,
-      largeImage: PropTypes.string.isRequired,
+      largeImageURL: PropTypes.string.isRequired,
     })
   ).isRequired,
   onImgClick: PropTypes.func.isRequired,

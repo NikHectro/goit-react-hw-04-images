@@ -11,7 +11,8 @@ export default class Searchbar extends Component {
 
     if (this.state.query.trim() === '') {
       // alert('Please, enter category');
-      return toast.warn('Please, enter category');
+      toast.warn('Please, enter category');
+      return;
     }
 
     this.props.onSubmit(this.state.query);
@@ -47,6 +48,6 @@ export default class Searchbar extends Component {
   }
 }
 
-Searchbar.protoType = {
+Searchbar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };

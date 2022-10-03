@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ImageGallery from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
-import { fetchImages } from 'api/api';
+import { fetchAPI } from 'api/api';
 import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
 
@@ -39,8 +39,8 @@ export class App extends Component {
       loading: true,
       // images: [],
     });
-    fetchImages
-      .fetchImages(searchQuery, page)
+    fetchAPI(searchQuery, page)
+      // .fetchImages(searchQuery, page)
       .then(data => {
         if (!data.hits.length) {
           this.setState({
