@@ -5,15 +5,12 @@
 //   return response.data.hits;
 // };
 
-function fetchImages(searchQuery, page) {
-  return fetch(
+export async function fetchImages(searchQuery, page) {
+  const response = await fetch(
     `https://pixabay.com/api/?q=${searchQuery}&page=${page}&key=29344544-28f8077a689a3611398a04467&image_type=photo&orientation=horizontal&per_page=12`
-  ).then(response => {
-    if (response.ok) {
-      return response.json();
-    }
-    return Promise.reject(new Error(`Nothing to show for "${searchQuery}`));
-  });
+  );
+  if (response.ok) {
+    return response.json();
+  }
+  return await Promise.reject(new Error(`Nothing to show for "${searchQuery}`));
 }
-
-export default { fetchImages };

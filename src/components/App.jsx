@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ImageGallery from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
-import imgAPI from 'api/api';
+import { fetchImages } from 'api/api';
 import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
 
@@ -39,7 +39,7 @@ export class App extends Component {
       loading: true,
       // images: [],
     });
-    imgAPI
+    fetchImages
       .fetchImages(searchQuery, page)
       .then(data => {
         if (!data.hits.length) {
@@ -88,15 +88,8 @@ export class App extends Component {
   };
 
   render() {
-    const {
-      loading,
-      images,
-      error,
-      totalImgs,
-      alt,
-      largeImageURL,
-      showModal,
-    } = this.state;
+    const { loading, images, error, totalImgs, alt, largeImageURL, showModal } =
+      this.state;
     return (
       <>
         <Searchbar onSubmit={this.getInputSubmit} />
