@@ -27,7 +27,12 @@ export class App extends Component {
   componentDidUpdate(prevProps, prevState) {
     const request = this.state.searchQuery;
     const page = this.state.page;
-
+    // if (prevState.searchQuery === request) {
+    //   console.log('request1', request);
+    // }
+    // if (prevState.searchQuery !== request) {
+    //   console.log('request2', request);
+    // }
     if (prevState.searchQuery !== request || prevState.page !== page) {
       this.fetchImages();
     }
@@ -83,9 +88,9 @@ export class App extends Component {
     this.setState({ showModal: true, largeImageURL: largeImageURL });
   };
 
-  onImgClick = ({ largeImageURL, alt }) => {
-    this.setState({ showModal: true, largeImageURL: largeImageURL, alt: alt });
-  };
+  // onImgClick = ({ largeImageURL, alt }) => {
+  //   this.setState({ showModal: true, largeImageURL: largeImageURL, alt: alt });
+  // };
 
   render() {
     const { loading, images, error, totalImgs, alt, largeImageURL, showModal } =
